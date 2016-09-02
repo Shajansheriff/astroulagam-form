@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 1</title>
+</head>
+<body>
+<form action="#" method="post" >
+
+    <table style="font-size: 15px;">
+        <tbody>
+        <tr >
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="container_order" >Container Order</label></td>
+            <td style="width: 350px;">
+                <select name="container_order" id="container_order" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;">
+                    <option value="1">1</option>
+                </select>
+            </td>
+        </tr>
+        <tr >
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="container_type" >Container Type</label></td>
+            <td style="width: 350px;">
+                <select name="container_type" id="container_type" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;">
+                    <option value="audio">Audio</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="audio_thumbnail">Audio Thumbnail</label></td>
+            <td>
+                <input type="file" id="audio_thumbnail" name="audio_thumbnail" style="display: none" onChange="Handlechange();"/>
+                <input type="text" id="browse" readonly="true" style="margin-bottom: 10px; width: 275px; height: 20px;"/>
+                <input type="button" value="Browse" id="fakeBrowse" onclick="HandleBrowseClick();" style="margin-bottom: 10px; height: 26px; width: 70px; margin-left: -5px; outline: none; background-color: mediumblue; color: white; border: none; font-size: 12px;" />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="audio_file">Audio File</label></td>
+            <td>
+                <input type="file" id="audio_file" name="audio_file" style="display: none" onChange="Handlechange2();"/>
+                <input type="text" id="browse2" readonly="true" style="margin-bottom: 10px; width: 275px; height: 20px;"/>
+                <input type="button" value="Browse" id="fakeBrowse2" onclick="HandleBrowseClick2();" style="margin-bottom: 10px; height: 26px; width: 70px; margin-left: -5px; outline: none; background-color: mediumblue; color: white; border: none; font-size: 12px;" />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="artist_name">Artist Name</label></td>
+            <td><input type="text" name="artist_name" id="artist_name" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="save"></label></td>
+            <td><button type="submit" value="Save" id="save" style="margin-bottom: 10px; height: 30px; width: 35%; margin-right: 5px;  background-color: mediumblue; color: white; border: none; font-size: 12px;">Save</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<script>
+    function HandleBrowseClick()
+    {
+        var fileinput = document.getElementById("audio_thumbnail");
+        fileinput.click();
+    }
+
+    function Handlechange()
+    {
+        var fileinput = document.getElementById("audio_thumbnail");
+        var textinput = document.getElementById("browse");
+        textinput.value = fileinput.value;
+    }
+    function HandleBrowseClick2()
+    {
+        var fileinput = document.getElementById("audio_file");
+        fileinput.click();
+    }
+
+    function Handlechange2()
+    {
+        var fileinput = document.getElementById("audio_file");
+        var textinput = document.getElementById("browse2");
+        textinput.value = fileinput.value;
+    }
+</script>
+</body>
+</html>

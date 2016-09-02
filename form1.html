@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form 1</title>
+</head>
+<body>
+<form action="#" method="post" >
+
+    <table style="font-size: 15px;">
+        <tbody>
+        <tr >
+            <td style="text-align: right; padding-bottom: 10px;"><label for="datetime" >Article Date and Time</label></td>
+            <td style="width: 350px;"><input type="datetime-local" name="article_datetime" id="datetime" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="article_image">Article Image</label></td>
+            <!--<td><input type="file" id="article_image" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px; "></td>-->
+            <td>
+                <input type="file" id="browse" name="article_image" style="display: none" onChange="Handlechange();"/>
+                <input type="text" id="filename" readonly="true" style="margin-bottom: 10px; width: 275px; height: 20px;"/>
+                <input type="button" value="Browse" id="fakeBrowse" onclick="HandleBrowseClick();" style="margin-bottom: 10px; height: 26px; width: 70px; margin-left: -5px; outline: none; background-color: mediumblue; color: white; border: none; font-size: 12px;" />
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="article_heading_text">Article Heading Text</label></td>
+            <td><input type="text" id="article_heading_text" name="article_heading" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="article_sharing_link">Article Sharing Link</label></td>
+            <td><input type="text" pattern="" name="article_sharing_url" id="article_sharing_link" required style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;"></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="article_id">Article ID</label></td>
+            <td><input type="text" name="article_id" id="article_id" style="margin-bottom: 10px; width: 100%; height: 20px; font-size: 15px;  "></td>
+        </tr>
+        <tr>
+            <td style="text-align: right; padding-right: 10px; padding-bottom: 10px;"><label for="save"></label></td>
+            <td><button type="submit" value="Save" id="save" style="margin-bottom: 10px; height: 30px; width: 35%; margin-right: 5px;  background-color: mediumblue; color: white; border: none; font-size: 12px;">Save</button>
+                <button style="margin-bottom: 10px; height: 30px; width: 55%; margin-right: 2px; background-color: red; color: white; border: none; font-size: 12px;">Add New Containers</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+<div id="container_holder" style="border: 1px solid black; width: 480px; padding: 10px; height: auto; color: white; ">
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: greenyellow; text-align: center; position: relative; display: inline-block;">
+        <p>1</p>
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: black; text-align: center; display: inline-block;">
+        <p>2</p>
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: red; text-align: center; display: inline-block;">
+        <p>3</p>
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: black; text-align: center; display: inline-block;">
+        <p>4</p>
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: darkblue; text-align: center; display: inline-block;">
+        <p>5</p>
+    </div>
+    <div style="width: 50px; height: 50px; border: 1px solid; background-color: brown; text-align: center; display: inline-block;">
+        <p>6</p>
+    </div>
+</div>
+<!--<nav style="border: 1px solid black; padding: 10px; width: 480px; height: auto; color: white;">-->
+    <!--<a href="#" style="padding: 15px 20px; background-color: greenyellow; text-decoration: none; color: white;">1</a>-->
+    <!--<a href="#">2</a>-->
+    <!--<a href="#">3</a>-->
+    <!--<a href="#">4</a>-->
+<!--</nav>-->
+<script>
+    function HandleBrowseClick()
+    {
+        var fileinput = document.getElementById("browse");
+        fileinput.click();
+    }
+
+    function Handlechange()
+    {
+        var fileinput = document.getElementById("browse");
+        var textinput = document.getElementById("filename");
+        textinput.value = fileinput.value;
+    }
+</script>
+</body>
+</html>
